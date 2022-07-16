@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_frm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bnv_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbarlayout"
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:background="@color/white"
+                tools:ignore="MissingConstraints">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <EditText
+                        android:id="@+id/search_bar"
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@drawable/search_round"
+                        android:drawableLeft="@drawable/ic_baseline_search_24"
+                        android:drawablePadding="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="1dp"
+                        android:text="오늘의집 통합검색"
+                        android:textColor="#B6B6B6"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/scrap"
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_toRightOf="@id/search_bar"
+                        android:paddingStart="5dp"
+                        android:src="@drawable/image_scrap" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_toRightOf="@id/scrap"
+                        android:src="@drawable/image_cart" />
+                </RelativeLayout>
+
+
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    app:tabIndicatorColor="@color/lightblue"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabIndicatorHeight="3dp"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="@color/lightblue"
+                    app:tabTextAppearance="@style/tabTextStyle">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="인기" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="팔로잉" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="사진" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="집들이" />
+
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="노하우" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="전문가집들이" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/appbarlayout"
+                >
+
+                <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".MainHomeFragment">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/viewPager_eventAds"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            android:layout_marginTop="@dimen/margin_Medium"
+                            android:layout_marginEnd="@dimen/margin_Medium"
+                            android:background="@drawable/eventad"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/buttons_constraint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="@dimen/margin_Medium"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            app:layout_constraintTop_toBottomOf="@id/viewPager_eventAds">
+
+                            <LinearLayout
+                                android:id="@+id/quickbuttons1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginEnd="19dp"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:ignore="MissingConstraints">
+
+                                <ImageButton
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/shopping" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_Basic"
+                                    android:text="쇼핑하기"
+                                    android:textStyle="bold" />
+
+
+                                <ImageButton
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/easymoveon" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="쉬운이사"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/quickbuttons2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginEnd="19dp"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintLeft_toRightOf="@id/quickbuttons1"
+                                tools:ignore="MissingConstraints">
+
+                                <ImageButton
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/quickdeliver" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_Basic"
+                                    android:text="빠른배송"
+                                    android:textStyle="bold" />
+
+
+                                <ImageButton
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/todaysale" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="오늘의딜"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/quickbuttons3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginEnd="19dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintLeft_toRightOf="@id/quickbuttons2"
+                                tools:ignore="MissingConstraints">
+
+                                <ImageButton
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/nsize" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_Basic"
+                                    android:text="N평집들이"
+                                    android:textStyle="bold" />
+
+
+                                <ImageButton
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/onscreen" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="절찬상영"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/quickbuttons4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginEnd="19dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintLeft_toRightOf="@id/quickbuttons3"
+                                tools:ignore="MissingConstraints">
+
+                                <ImageButton
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/picture" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_Basic"
+                                    android:text="공간별사진"
+                                    android:textStyle="bold" />
+
+
+                                <ImageButton
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/homedeco" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="홈데코특가"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/quickbuttons5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginEnd="19dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintLeft_toRightOf="@id/quickbuttons4"
+                                tools:ignore="MissingConstraints">
+
+                                <ImageButton
+                                    android:layout_width="52dp"
+                                    android:layout_height="52dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/cevent" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_Basic"
+                                    android:text="시공이벤트"
+                                    android:textStyle="bold" />
+
+
+                                <ImageButton
+                                    android:layout_width="52dp"
+                                    android:layout_height="52dp"
+                                    android:background="@color/white"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/lovinghome" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="프로집순이"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/view_divider"
+                            android:layout_width="0dp"
+                            android:layout_height="10dp"
+                            app:layout_constraintTop_toBottomOf="@id/buttons_constraint"
+                            android:layout_marginTop="30dp"
+                            android:background="#eeeff1"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/rec_text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            app:layout_constraintTop_toBottomOf="@id/view_divider"
+                            android:layout_marginTop="@dimen/margin_Large"
+                            android:text="제이님을 위한 추천 집들이"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:id="@+id/rec_text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            app:layout_constraintTop_toBottomOf="@id/rec_text1"
+                            android:text="요즘 이런 스타일 좋아하시더라구요 😉"
+                            android:layout_marginTop="@dimen/margin_Basic"
+                            />
+
+                        <GridLayout
+                            android:id="@+id/rec_imagetext"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/rec_text2"
+                            android:columnCount="2"
+                            android:rowCount="4"
+                            android:layout_marginTop="@dimen/margin_Basic"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            android:layout_marginEnd="@dimen/margin_Medium"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="194dp"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:src="@drawable/rec_image1" />
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="194dp"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:src="@drawable/rec_image2" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:text="냥글냥글, 따스함이 묻어나는 구옥 주택살이" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:text="용기를 낸 덕분에 알기 딘 나의 취향, 나의 행복" />
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="194dp"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:src="@drawable/rec_image3" />
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="194dp"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:src="@drawable/rec_image4" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:text="독립 2년 차, 비우고 또 채우며 자취 로망 실현하기" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:text="테라스가 있는 투룸, 150만원으로 실속있게 꾸몄어요" />
+
+
+
+
+                        </GridLayout>
+
+                        <View
+                            android:id="@+id/view_divider2"
+                            android:layout_width="0dp"
+                            android:layout_height="10dp"
+                            app:layout_constraintTop_toBottomOf="@id/rec_imagetext"
+                            android:layout_marginTop="30dp"
+                            android:background="#eeeff1"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/single_text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            app:layout_constraintTop_toBottomOf="@id/view_divider2"
+                            android:layout_marginTop="@dimen/margin_Large"
+                            android:text="싱글라이프의 요즘 집들이🧡"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            />
+
+
+                        <GridLayout
+                            android:id="@+id/single_imagetext"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/single_text1"
+                            android:columnCount="2"
+                            android:rowCount="4"
+                            android:layout_marginTop="@dimen/margin_Basic"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            android:layout_marginEnd="@dimen/margin_Medium"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="194dp"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:src="@drawable/single_image1" />
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="194dp"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:src="@drawable/single_image2" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:text="설레는 첫 독립 깔끔하고 모던한 싱글라이프" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:text="온전히 기록할 수 있도록 평온한 5평 내 공간" />
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="194dp"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:src="@drawable/single_image3" />
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="194dp"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:src="@drawable/single_image4" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginRight="@dimen/margin_Medium"
+                                android:text="심플한 바탕에 팝! 5평 방에 만든 나만의 세상" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_columnWeight="1"
+                                android:text="화이트 블랙 모던함에 수납까지 챙긴 원룸" />
+
+
+
+
+                        </GridLayout>
+
+                        <View
+                            android:id="@+id/view_divider3"
+                            android:layout_width="0dp"
+                            android:layout_height="10dp"
+                            app:layout_constraintTop_toBottomOf="@id/single_imagetext"
+                            android:layout_marginTop="30dp"
+                            android:background="#eeeff1"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                </androidx.core.widget.NestedScrollView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_main"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_tab_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

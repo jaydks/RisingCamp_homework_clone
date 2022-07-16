@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_tab_home"
+        android:enabled="true"
+        android:title="홈"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+    <item
+        android:id="@+id/bottom_tab_store"
+        android:enabled="true"
+        android:title="스토어"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_store_24"/>
+    <item
+        android:id="@+id/bottom_tab_findcom"
+        android:enabled="true"
+        android:title="맞춤업체찾기"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_findcom_24"/>
+    <item
+        android:id="@+id/bottom_mypage"
+        android:enabled="true"
+        android:title="마이페이지"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_mypage_24"/>
+</menu>
