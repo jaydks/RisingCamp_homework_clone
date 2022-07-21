@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="margin_Small">5dp</dimen>
+    <dimen name="margin_SmallBasic">7dp</dimen>
     <dimen name="margin_Basic">10dp</dimen>
+    <dimen name="margin_BasicMedium">15dp</dimen>
     <dimen name="margin_Medium">20dp</dimen>
+    <dimen name="margin_MediumLarge">25dp</dimen>
     <dimen name="margin_Large">30dp</dimen>
+    <dimen name="margin_Large2">40dp</dimen>
+    <dimen name="margin_Large3">50dp</dimen>
 </resources>

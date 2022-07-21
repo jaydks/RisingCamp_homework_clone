@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_Basic"
+        android:text="@string/lookaround"
+        android:textColor="#D1D1D1"
+        android:background=""
+        android:layout_marginTop="@dimen/margin_Large2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/begin_text_signup_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/begin_text_signup_1"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/begin_text_signup_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_Small"
+        android:text="@string/begin_text_signup_2"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/begin_text_signup_1" />
+
+
+    <ImageView
+        android:id="@+id/img_fast_signup"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="@dimen/margin_Large"
+        android:src="@drawable/fast_signup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/begin_text_signup_2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signin_kakao"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/margin_Large"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="@dimen/margin_Large"
+        android:background="@drawable/round_button_yellow"
+        android:drawableStart="@drawable/img_kakao"
+        android:drawablePadding="@dimen/margin_Small"
+        android:gravity="center|start"
+        android:paddingStart="90dp"
+        android:text="@string/btn_signin_kakao"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_fast_signup" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signin_apple"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/margin_Large"
+        android:layout_marginTop="@dimen/margin_Basic"
+        android:layout_marginRight="@dimen/margin_Large"
+        android:background="@drawable/round_button_black"
+        android:drawableStart="@drawable/img_apple"
+        android:drawablePadding="@dimen/margin_Small"
+        android:gravity="center|start"
+        android:paddingStart="100dp"
+        android:text="@string/btn_signin_apple"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_signin_kakao" />
+
+    <ImageButton
+        android:id="@+id/btn_naver"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/margin_Large"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_naver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_signin_apple" />
+
+    <ImageButton
+        android:id="@+id/btn_facebook"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/margin_Large"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_facebook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_signin_apple" />
+
+    <Button
+        android:id="@+id/login_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background=""
+        android:text="@string/login_email"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/view_divider4"
+        app:layout_constraintTop_toBottomOf="@id/btn_naver" />
+
+    <Button
+        android:id="@+id/signup_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background=""
+        android:text="@string/signup_email"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_divider4"
+        app:layout_constraintTop_toBottomOf="@id/btn_facebook" />
+
+    <View
+        android:id="@+id/view_divider4"
+        android:layout_width="2dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="@dimen/margin_Large3"
+        android:background="#D1D1D1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_naver" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ask_wrong_signin"
+        android:textColor="@color/view"
+        android:background=""
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/margin_Large2"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

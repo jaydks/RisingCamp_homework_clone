@@ -4,15 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.216" />
+        <entry key="app/src/main/res/drawable/background_splash_1.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/background_splash_2.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/circle_button_naver.xml" value="0.1455" />
         <entry key="app/src/main/res/drawable/ic_baseline_bookmark_border_24.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_baseline_findcom_24.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1215" />
+        <entry key="app/src/main/res/drawable/ic_baseline_mypage_24.xml" value="0.1455" />
         <entry key="app/src/main/res/drawable/ic_baseline_perm_identity_24.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_baseline_storefront_24.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.216" />
+        <entry key="app/src/main/res/drawable/img_apple.xml" value="0.1455" />
+        <entry key="app/src/main/res/drawable/img_kakao.xml" value="0.1455" />
+        <entry key="app/src/main/res/drawable/round_button.xml" value="0.1455" />
+        <entry key="app/src/main/res/drawable/round_button_black.xml" value="0.1455" />
         <entry key="app/src/main/res/drawable/search_round.xml" value="0.1785" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21158447265625002" />
+        <entry key="app/src/main/res/layout/activity_begin.xml" value="0.3012649536132813" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21473999023437496" />
+        <entry key="app/src/main/res/layout/background_splash_2.xml" value="0.15230102539062496" />
         <entry key="app/src/main/res/layout/bottom_tab_menu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment__store.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_findcom.xml" value="0.1" />
@@ -21,6 +31,7 @@
         <entry key="app/src/main/res/layout/fragment_main_home.xml" value="0.285739499527887" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.11867948182198078" />
         <entry key="app/src/main/res/layout/fragment_store.xml" value="0.231722958529286" />
+        <entry key="app/src/main/res/layout/round_button.xml" value="0.23086789226165028" />
         <entry key="app/src/main/res/menu/bottom_tab_menu.xml" value="0.3488830566406249" />
       </map>
     </option>

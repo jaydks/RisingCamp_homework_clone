@@ -15,9 +15,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".MainActivity">
@@ -29,51 +27,74 @@
                 android:background="@color/white"
                 tools:ignore="MissingConstraints">
 
+
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    app:layout_scrollFlags="scroll|enterAlways">
+                    android:layout_height="45dp">
 
-                    <EditText
-                        android:id="@+id/search_bar"
-                        android:layout_width="300dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="6dp"
-                        android:background="@drawable/search_round"
-                        android:drawableLeft="@drawable/ic_baseline_search_24"
-                        android:drawablePadding="10dp"
-                        android:paddingStart="15dp"
-                        android:paddingTop="1dp"
-                        android:text="오늘의집 통합검색"
-                        android:textColor="#B6B6B6"
-                        android:textSize="14sp" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/search_constraint"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_scrollFlags="scroll|enterAlways">
 
-                    <ImageView
-                        android:id="@+id/scrap"
-                        android:layout_width="33dp"
-                        android:layout_height="33dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_toRightOf="@id/search_bar"
-                        android:paddingStart="5dp"
-                        android:src="@drawable/image_scrap" />
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_toRightOf="@id/scrap"
-                        android:src="@drawable/image_cart" />
+                        <EditText
+                            android:id="@+id/search_bar"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/margin_Basic"
+                            android:layout_marginTop="@dimen/margin_Small"
+                            android:layout_marginEnd="@dimen/margin_Basic"
+                            android:layout_marginBottom="@dimen/margin_Small"
+                            android:background="@drawable/search_round"
+                            android:drawableLeft="@drawable/ic_baseline_search_24"
+                            android:drawablePadding="10dp"
+                            android:hint="오늘의집 통합검색"
+                            android:paddingStart="15dp"
+                            android:paddingTop="1dp"
+                            android:textColor="#B6B6B6"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/topscrap"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/topscrap"
+                            android:layout_width="30dp"
+                            android:layout_height="33dp"
+                            android:layout_marginLeft="@dimen/margin_Small"
+                            android:src="@drawable/image_scrap"
+                            app:layout_constraintEnd_toStartOf="@id/topcart"
+                            app:layout_constraintStart_toEndOf="@id/search_bar"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            tools:layout_editor_absoluteY="6dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/topcart"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="@dimen/margin_Small"
+                            android:layout_marginEnd="@dimen/margin_Basic"
+                            android:src="@drawable/image_cart"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@id/topscrap"
+                            tools:layout_editor_absoluteY="7dp" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </RelativeLayout>
 
 
                 <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/top_tablayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="4dp"
@@ -123,12 +144,9 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/appbarlayout"
-                >
+                app:layout_constraintTop_toBottomOf="@id/appbarlayout">
 
-                <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools"
+                <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:context=".MainHomeFragment">
@@ -173,8 +191,8 @@
                                 tools:ignore="MissingConstraints">
 
                                 <ImageButton
-                                    android:layout_width="55dp"
-                                    android:layout_height="55dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/shopping" />
@@ -188,8 +206,8 @@
 
 
                                 <ImageButton
-                                    android:layout_width="55dp"
-                                    android:layout_height="55dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/easymoveon" />
@@ -217,8 +235,8 @@
                                 tools:ignore="MissingConstraints">
 
                                 <ImageButton
-                                    android:layout_width="55dp"
-                                    android:layout_height="55dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/quickdeliver" />
@@ -232,7 +250,7 @@
 
 
                                 <ImageButton
-                                    android:layout_width="55dp"
+                                    android:layout_width="50dp"
                                     android:layout_height="55dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
@@ -261,8 +279,8 @@
                                 tools:ignore="MissingConstraints">
 
                                 <ImageButton
-                                    android:layout_width="55dp"
-                                    android:layout_height="55dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/nsize" />
@@ -276,8 +294,8 @@
 
 
                                 <ImageButton
-                                    android:layout_width="55dp"
-                                    android:layout_height="55dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/onscreen" />
@@ -305,8 +323,8 @@
                                 tools:ignore="MissingConstraints">
 
                                 <ImageButton
-                                    android:layout_width="55dp"
-                                    android:layout_height="55dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/picture" />
@@ -320,8 +338,8 @@
 
 
                                 <ImageButton
-                                    android:layout_width="55dp"
-                                    android:layout_height="55dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/homedeco" />
@@ -348,8 +366,8 @@
                                 tools:ignore="MissingConstraints">
 
                                 <ImageButton
-                                    android:layout_width="52dp"
-                                    android:layout_height="52dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/cevent" />
@@ -363,8 +381,8 @@
 
 
                                 <ImageButton
-                                    android:layout_width="52dp"
-                                    android:layout_height="52dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:background="@color/white"
                                     android:scaleType="centerInside"
                                     android:src="@drawable/lovinghome" />
@@ -385,10 +403,10 @@
                             android:id="@+id/view_divider"
                             android:layout_width="0dp"
                             android:layout_height="10dp"
-                            app:layout_constraintTop_toBottomOf="@id/buttons_constraint"
                             android:layout_marginTop="30dp"
                             android:background="#eeeff1"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/buttons_constraint"
 
                             />
 
@@ -396,36 +414,34 @@
                             android:id="@+id/rec_text1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintStart_toStartOf="parent"
                             android:layout_marginStart="@dimen/margin_Medium"
-                            app:layout_constraintTop_toBottomOf="@id/view_divider"
                             android:layout_marginTop="@dimen/margin_Large"
                             android:text="제이님을 위한 추천 집들이"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            />
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/view_divider" />
 
                         <TextView
                             android:id="@+id/rec_text2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintStart_toStartOf="parent"
                             android:layout_marginStart="@dimen/margin_Medium"
-                            app:layout_constraintTop_toBottomOf="@id/rec_text1"
-                            android:text="요즘 이런 스타일 좋아하시더라구요 😉"
                             android:layout_marginTop="@dimen/margin_Basic"
-                            />
+                            android:text="요즘 이런 스타일 좋아하시더라구요 😉"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/rec_text1" />
 
                         <GridLayout
                             android:id="@+id/rec_imagetext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toBottomOf="@id/rec_text2"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            android:layout_marginTop="@dimen/margin_Basic"
+                            android:layout_marginEnd="@dimen/margin_Medium"
                             android:columnCount="2"
                             android:rowCount="4"
-                            android:layout_marginTop="@dimen/margin_Basic"
-                            android:layout_marginStart="@dimen/margin_Medium"
-                            android:layout_marginEnd="@dimen/margin_Medium"
+                            app:layout_constraintTop_toBottomOf="@id/rec_text2"
 
                             >
 
@@ -458,6 +474,7 @@
                                 android:layout_columnSpan="1"
                                 android:layout_columnWeight="1"
                                 android:text="용기를 낸 덕분에 알기 딘 나의 취향, 나의 행복" />
+
                             <ImageView
                                 android:layout_width="0dp"
                                 android:layout_height="194dp"
@@ -489,18 +506,16 @@
                                 android:text="테라스가 있는 투룸, 150만원으로 실속있게 꾸몄어요" />
 
 
-
-
                         </GridLayout>
 
                         <View
                             android:id="@+id/view_divider2"
                             android:layout_width="0dp"
                             android:layout_height="10dp"
-                            app:layout_constraintTop_toBottomOf="@id/rec_imagetext"
                             android:layout_marginTop="30dp"
                             android:background="#eeeff1"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/rec_imagetext"
 
                             />
 
@@ -508,26 +523,25 @@
                             android:id="@+id/single_text1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintStart_toStartOf="parent"
                             android:layout_marginStart="@dimen/margin_Medium"
-                            app:layout_constraintTop_toBottomOf="@id/view_divider2"
                             android:layout_marginTop="@dimen/margin_Large"
                             android:text="싱글라이프의 요즘 집들이🧡"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            />
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/view_divider2" />
 
 
                         <GridLayout
                             android:id="@+id/single_imagetext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toBottomOf="@id/single_text1"
+                            android:layout_marginStart="@dimen/margin_Medium"
+                            android:layout_marginTop="@dimen/margin_Basic"
+                            android:layout_marginEnd="@dimen/margin_Medium"
                             android:columnCount="2"
                             android:rowCount="4"
-                            android:layout_marginTop="@dimen/margin_Basic"
-                            android:layout_marginStart="@dimen/margin_Medium"
-                            android:layout_marginEnd="@dimen/margin_Medium"
+                            app:layout_constraintTop_toBottomOf="@id/single_text1"
 
                             >
 
@@ -547,19 +561,24 @@
                                 android:src="@drawable/single_image2" />
 
                             <TextView
+                                android:id="@+id/rec_hc_text1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_columnSpan="1"
                                 android:layout_columnWeight="1"
                                 android:layout_marginRight="@dimen/margin_Medium"
+                                android:bufferType="spannable"
                                 android:text="설레는 첫 독립 깔끔하고 모던한 싱글라이프" />
 
                             <TextView
+                                android:id="@+id/rec_hc_text2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_columnSpan="1"
                                 android:layout_columnWeight="1"
+                                android:bufferType="spannable"
                                 android:text="온전히 기록할 수 있도록 평온한 5평 내 공간" />
+
                             <ImageView
                                 android:layout_width="0dp"
                                 android:layout_height="194dp"
@@ -576,21 +595,23 @@
                                 android:src="@drawable/single_image4" />
 
                             <TextView
+                                android:id="@+id/rec_hc_text3"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_columnSpan="1"
                                 android:layout_columnWeight="1"
                                 android:layout_marginRight="@dimen/margin_Medium"
+                                android:bufferType="spannable"
                                 android:text="심플한 바탕에 팝! 5평 방에 만든 나만의 세상" />
 
                             <TextView
+                                android:id="@+id/rec_hc_text4"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_columnSpan="1"
                                 android:layout_columnWeight="1"
+                                android:bufferType="spannable"
                                 android:text="화이트 블랙 모던함에 수납까지 챙긴 원룸" />
-
-
 
 
                         </GridLayout>
@@ -599,10 +620,10 @@
                             android:id="@+id/view_divider3"
                             android:layout_width="0dp"
                             android:layout_height="10dp"
-                            app:layout_constraintTop_toBottomOf="@id/single_imagetext"
                             android:layout_marginTop="30dp"
                             android:background="#eeeff1"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/single_imagetext"
 
                             />
 
@@ -610,14 +631,10 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
                 </androidx.core.widget.NestedScrollView>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

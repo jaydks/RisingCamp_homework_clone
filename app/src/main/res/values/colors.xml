@@ -8,5 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lightblue">#03A9F4</color>
+    <color name="splashbackground">#FFFEFE</color>
+    <color name="yellow">#F9E00A</color>
+    <color name="naver_green">#2FB005</color>
+    <color name="facebook_blue">#3B579E</color>
+    <color name="view">#D7D6D6</color>
+
+
 
 </resources>
